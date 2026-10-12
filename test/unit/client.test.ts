@@ -115,8 +115,8 @@ describe("InngestClient coverage", () => {
     it("targets the dev server at INNGEST_DEV when it is a URL", async () => {
       expect(await resolveFromEnv({ INNGEST_DEV: "http://inngest:8288" })).toEqual({
         mode: "dev",
-        apiBaseUrl: "http://inngest:8288",
-        eventBaseUrl: "http://inngest:8288",
+        apiBaseUrl: "http://inngest:8288/",
+        eventBaseUrl: "http://inngest:8288/",
         env: undefined,
       });
     });
