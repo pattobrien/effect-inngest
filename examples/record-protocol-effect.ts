@@ -895,7 +895,7 @@ const canonicalizeParallelChildOrder = (ordered: ReadonlyArray<Exchange>) => {
     };
   };
   const canonical: Array<Exchange> = [];
-  for (let index = 0; index < ordered.length; ) {
+  for (let index = 0; index < ordered.length;) {
     const exchange = normalizeExchange(ordered[index]!);
     if (!isParallelChildRequest(exchange, orderByPath)) {
       canonical.push(exchange);

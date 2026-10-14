@@ -69,18 +69,18 @@ export class SignedPayload extends Schema.Class<SignedPayload>("effect-inngest/S
   body: Schema.Uint8Array,
   signature: Schema.OptionFromUndefinedOr(SignatureHeader),
 }) {
-  readonly requireSignature = Effect.fn("effect-inngest/SignedPayload/requireSignature")(
-    function (this: SignedPayload) {
-      return Effect.fromOption(this.signature).pipe(
-        Effect.mapError(() =>
-          SignatureError.make({
-            reason: "missing_header",
-            message: "Missing Inngest signature header",
-          }),
-        ),
-      );
-    },
-  );
+  readonly requireSignature = Effect.fn("effect-inngest/SignedPayload/requireSignature")(function (
+    this: SignedPayload,
+  ) {
+    return Effect.fromOption(this.signature).pipe(
+      Effect.mapError(() =>
+        SignatureError.make({
+          reason: "missing_header",
+          message: "Missing Inngest signature header",
+        }),
+      ),
+    );
+  });
 }
 
 interface SignatureService {
