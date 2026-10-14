@@ -37,6 +37,9 @@ jobs:
       - name: Check
         run: node_modules/.bin/vp check
 
+      - name: ast-grep
+        run: bun run ast-grep
+
       - name: Typecheck
         run: bun run typecheck
 

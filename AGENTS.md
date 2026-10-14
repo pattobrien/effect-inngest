@@ -4,7 +4,7 @@ Native Effect client library for Inngest - durable, type-safe workflows.
 
 ## Commands
 
-- **Typecheck**: `bun run typecheck` (uses tsgo)
+- **Typecheck**: `bun run typecheck` (TypeScript 7 `tsc`, patched by `effect-tsgo`)
 - **Lint**: `bun run lint` (oxlint with type-aware checking)
 - **Build**: `bun run build` (tsdown)
 - **Test all**: `vp test run`
